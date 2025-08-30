@@ -1,6 +1,9 @@
-//import { useState } from 'react';
-import SearchBar from '../SearchBar/SearchBar';
 import './App.css';
+
+//import { useEffect, useState } from 'react';
+//import toast, { Toaster } from 'react-hot-toast';
+import SearchBar from '../SearchBar/SearchBar';
+import ImageGallery from './components/ImageGallery/ImageGallery.jsx';
 
 /* const App = () => {
     const [articles, setArticles] = useState([]);
