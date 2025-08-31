@@ -1,29 +1,33 @@
-//import css from './SearchBar.module.css';
+import { useState } from 'react';
+import styles from './SearchBar.module.css';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSubmit }) => {
+    const [value, setValue] = useState('');
+
     const handleSubmit = evt => {
         evt.preventDefault();
-        const form = evt.target;
-        const topic = form.elements.topic.value;
-
-        // Якщо текстове поле порожнє, виводимо повідомлення
-        // і припиняємо виконання функції.
-        if (form.elements.topic.value.trim() === '') {
-            alert('Please enter search term!');
-            return;
+        if (onSubmit) {
+            onSubmit(value);
         }
-
-        // У протилежному випадку викликаємо пропс
-        // і передаємо йому значення поля
-        onSearch(topic);
-        form.reset();
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="topic" placeholder="Пошук статей..." />
-            <button>Пошук</button>
-        </form>
+        <header className={styles.header}>
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <input
+                    className={styles.input}
+                    type="text"
+                    autoComplete="off"
+                    autoFocus
+                    placeholder="Search images and photos"
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
+                />
+                <button className={styles.button} type="submit">
+                    Search
+                </button>
+            </form>
+        </header>
     );
 };
 

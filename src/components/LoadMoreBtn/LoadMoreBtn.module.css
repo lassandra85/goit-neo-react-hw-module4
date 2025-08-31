@@ -1,18 +1,9 @@
-.header {
-    background: transparent;
-}
-.form {
+.wrap {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    padding: 16px;
 }
-.input {
-    flex: 1;
-    max-width: 400px;
-    padding: 10px 12px;
-    border: 1px solid #bef9f9;
-    border-radius: 8px;
-}
+
 .button {
     padding: 10px 16px;
     border: 1px solid hsl(186, 85%, 59%);
