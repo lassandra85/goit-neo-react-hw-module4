@@ -1,27 +1,30 @@
-.header {
+header {
     background: transparent;
 }
-.form {
+form {
     display: flex;
     justify-content: center;
     gap: 8px;
 }
-.input {
+input {
     flex: 1;
     max-width: 400px;
     padding: 10px 12px;
     border: 1px solid #bef9f9;
     border-radius: 8px;
 }
-.button {
+
+input:hover,
+input:focus,
+input:focus-visible {
+    border-color: #252ff2;
+}
+
+button {
     padding: 10px 16px;
     border: 1px solid hsl(186, 85%, 59%);
     background: hsl(50, 97%, 73%);
     color: hsl(186, 85%, 59%);
     border-radius: 8px;
     cursor: pointer;
-}
-
-.button:hover {
-    opacity: 0.9;
 }
